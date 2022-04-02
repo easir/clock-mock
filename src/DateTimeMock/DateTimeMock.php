@@ -23,9 +23,9 @@ class DateTimeMock extends \DateTime
 
         if ($this->shouldUseMicrosecondsOfFrozenDate($datetime)) {
             $this->setTime(
-                $this->format('H'),
-                $this->format('i'),
-                $this->format('s'),
+                (int) $this->format('H'),
+                (int) $this->format('i'),
+                (int) $this->format('s'),
                 (int) ClockMock::getFrozenDateTime()->format('u')
             );
         }
